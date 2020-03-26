@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`password` (
   `password` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
-  CONSTRAINT `id`
+  CONSTRAINT `idpass`
     FOREIGN KEY (`id`)
     REFERENCES `mydb`.`login` (`id`)
     ON DELETE NO ACTION

@@ -1,0 +1,12 @@
+sequelize init
+sequelize init:config
+sequelize model:generate --name user --attributes username:string 
+sequelize model:generate --name login --attributes firstName:STRING,lastName:STRING,MI:STRING,suffix:STRING
+sequelize model:generate --name password --attributes userId:INTEGER,password:STRING,hash:STRING,salt:STRING
+sequelize model:generate --name itemInfo --attributes userId:INTEGER,storeName:String,itemLable:STRING,itemLableTwo:STRING,price:DECIMAL,item_pic:STRING
+sequelize model:generate --name custInfo --attributes userId:INTEGER,address:String,city:STRING,state:STRING,zipCode:STRING,customer_pic:STRING
+
+
+
+
+https://sequelize.org/master/variable/index.html#static-variable-DataTypes

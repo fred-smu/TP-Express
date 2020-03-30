@@ -34,5 +34,9 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^5.21.5"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
   }
 }

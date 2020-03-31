@@ -9,10 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.STRING
     },
-    hash:{
-      allowNull: false,
-      type: DataTypes.STRING
-    },
+    
     salt:{
       allowNull: false,
       type: DataTypes.STRING

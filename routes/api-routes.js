@@ -1,7 +1,7 @@
 // *********************************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
 // *********************************************************************************
-
+const bcrypt = require("bcryptjs");
 // Dependencies
 // =============================================================
 
@@ -12,12 +12,27 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
+  app.post("/api/createUser", (req, res) => {
+
+    var salt = bcrypt.genSaltSync(10);
+    var hash = bcrypt.hashSync("some password", salt);    
+    console.log(hash);
+
+   db.login.create({loginName:"James", firstName:"James", lastName:"Helms", MI:"O"})
+   .then(function(data){
+     db.password.create({salt:salt, password:hash, userId:data.dataValues.id});
+   }) 
+  //  , password: hash, salt: salt});
+
+    res.end();
+})
+
   /******LOGIN ROUTS */
   // find one record by loginName
   app.get("/api/login/:loginName", function(req, res) {
     db.Login.findOne({
       where: {
-        id: req.user.loginName
+        loginName: `ohboy`
       }
     });
     return(req.params);
@@ -26,20 +41,27 @@ module.exports = function(app) {
   app.get("/api/login/:id", function(req, res) {
     db.Login.findOne({
       where: {
-        id: req.user.id
+        id: `1`
       }
-    });
-    return(req.params);
+    })
+    // return(req.params);
+    .then(function(data){
+      console.log(data);
+      res.json(data);
+    })
   });
     // create login record
     app.post("/api/login", function(req, res) {
       console.log(req.body);
+      const hashedPassword = password.hash(req.body.password)
+    
       db.Login.create({
         loginName: req.body.loginName,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         MI: req.body.MI,
-        suffix: req.body.suffix
+        suffix: req.body.suffix,
+        password: hashedPassword
       })
         .then(function(dbPost) {
           res.json(dbPost);

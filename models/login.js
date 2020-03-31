@@ -23,7 +23,9 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       type: DataTypes.STRING
     },
-    suffix: DataTypes.STRING
+    suffix: {
+      type: DataTypes.STRING,
+    }
   }, {});
   login.associate = function(models) {
     // associations can be defined here

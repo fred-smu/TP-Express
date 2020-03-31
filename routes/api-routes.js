@@ -13,12 +13,12 @@ var db = require("../models");
 module.exports = function(app) {
 
   app.post("/api/createUser", (req, res) => {
-
+    console.log(req.body.password);
     var salt = bcrypt.genSaltSync(10);
-    var hash = bcrypt.hashSync("some password", salt);    
+    var hash = bcrypt.hashSync(req.body.password, salt);    
     console.log(hash);
 
-   db.login.create({loginName:"James", firstName:"James", lastName:"Helms", MI:"O"})
+   db.login.create({loginName:req.body.loginName, firstName:req.body.firstName, lastName:req.body.lastName, MI:req.body.MI})
    .then(function(data){
      db.password.create({salt:salt, password:hash, userId:data.dataValues.id});
    }) 
@@ -32,11 +32,7 @@ module.exports = function(app) {
   app.get("/api/login/:loginName", function(req, res) {
     db.Login.findOne({
       where: {
-<<<<<<< HEAD
-        loginName: `ohboy`
-=======
         loginName: req.user.loginName
->>>>>>> 7eb4bee9d20cf4c7d2edaffe1a329be74c4ea678
       }
     })
     .then(function(dbPost) {
@@ -50,7 +46,6 @@ module.exports = function(app) {
         id: `1`
       }
     })
-<<<<<<< HEAD
     // return(req.params);
     .then(function(data){
       console.log(data);
@@ -62,16 +57,6 @@ module.exports = function(app) {
       console.log(req.body);
       const hashedPassword = password.hash(req.body.password)
     
-=======
-    .then(function(dbPost) {
-      console.log("ID="dbPost);
-      res.json(dbPost);
-    });
-  });
-    // create login record
-    app.post("/api/login", function(req, res) {
-      // console.log(req.body);
->>>>>>> 7eb4bee9d20cf4c7d2edaffe1a329be74c4ea678
       db.Login.create({
         loginName: req.body.loginName,
         firstName: req.body.firstName,

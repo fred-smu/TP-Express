@@ -32,18 +32,25 @@ module.exports = function(app) {
   app.get("/api/login/:loginName", function(req, res) {
     db.Login.findOne({
       where: {
+<<<<<<< HEAD
         loginName: `ohboy`
+=======
+        loginName: req.user.loginName
+>>>>>>> 7eb4bee9d20cf4c7d2edaffe1a329be74c4ea678
       }
+    })
+    .then(function(dbPost) {
+      console.log("loginName="+dbPost);
+      res.json(dbPost);
     });
-    return(req.params);
-  });
-    // find one record by id
+    })
   app.get("/api/login/:id", function(req, res) {
     db.Login.findOne({
       where: {
         id: `1`
       }
     })
+<<<<<<< HEAD
     // return(req.params);
     .then(function(data){
       console.log(data);
@@ -55,6 +62,16 @@ module.exports = function(app) {
       console.log(req.body);
       const hashedPassword = password.hash(req.body.password)
     
+=======
+    .then(function(dbPost) {
+      console.log("ID="dbPost);
+      res.json(dbPost);
+    });
+  });
+    // create login record
+    app.post("/api/login", function(req, res) {
+      // console.log(req.body);
+>>>>>>> 7eb4bee9d20cf4c7d2edaffe1a329be74c4ea678
       db.Login.create({
         loginName: req.body.loginName,
         firstName: req.body.firstName,
@@ -81,12 +98,7 @@ module.exports = function(app) {
         });
     });
     app.delete("/api/login/:loginName", function(req, res) {
-      db.Login.findOne({
-        where: {
-          id: req.user.loginName
-        }
-      });
-      // let userid: Login.id;
+           // let userid: Login.id;
       db.login.destroy({
         where: {
           loginName: req.user.loginName
@@ -103,8 +115,11 @@ module.exports = function(app) {
       where: {
         userId: req.user.userId
       }
+    })
+    .then(function(dbPost) {
+      console.log(dbPost);
+      res.json(dbPost);
     });
-    return(req.params);
   });
     // find one record by id
   app.get("/api/custinfo/:userId", function(req, res) {
@@ -112,8 +127,11 @@ module.exports = function(app) {
       where: {
         userid: req.user.userId
       }
+    })
+    .then(function(dbPost) {
+      console.log(dbPost);
+      res.json(dbPost);
     });
-    return(req.params);
   });
     // create custinfo record
     app.post("/api/custinfo", function(req, res) {
@@ -161,8 +179,11 @@ module.exports = function(app) {
         where: {
           userId: req.user.userId
         }
+      })
+      .then(function(dbPost) {
+        console.log(dbPost);
+        res.json(dbPost);
       });
-      return(req.params);
     });
       // find one record by id
     app.get("/api/password/:userId", function(req, res) {
@@ -170,8 +191,11 @@ module.exports = function(app) {
         where: {
           userid: req.user.userId
         }
+      })
+      .then(function(dbPost) {
+        console.log(dbPost);
+        res.json(dbPost);
       });
-      return(req.params);
     });
       // create custinfo record
       app.post("/api/password", function(req, res) {
@@ -218,8 +242,11 @@ module.exports = function(app) {
         where: {
           userId: req.user.userId
         }
+      })
+      .then(function(dbPost) {
+        console.log(dbPost);
+        res.json(dbPost);
       });
-      return(req.params);
     });
       // find one record by id
     app.get("/api/iteminfo/:userId", function(req, res) {
@@ -227,8 +254,11 @@ module.exports = function(app) {
         where: {
           userid: req.user.userId
         }
+      })
+      .then(function(dbPost) {
+        console.log(dbPost);
+        res.json(dbPost);
       });
-      return(req.params);
     });
       // create custinfo record
       app.post("/api/iteminfo", function(req, res) {

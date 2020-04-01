@@ -32,7 +32,7 @@ module.exports = function(app) {
       }
     })
     .then(function(dbPost) {
-      console.log("ID="dbPost);
+      console.log("ID="+dbPost);
       res.json(dbPost);
     });
   });

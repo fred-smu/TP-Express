@@ -5,6 +5,7 @@
 // *** Dependencies
 // =============================================================
 const express = require("express");
+var session = require("express-session");
 const path = require("path");
 // Sets up the Express App
 // =============================================================

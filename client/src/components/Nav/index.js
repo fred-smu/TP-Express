@@ -1,19 +1,17 @@
 import React from "react";
-// import Home from "../../pages/Home";
-// import About from "../../pages/About";
-// import Login from "../../pages/Login";
+import { Link } from  "react-router-dom";
 
 function Nav() {
   
   return (
     <header>
-    <h2><a href="">TP-Express</a></h2>
+    <h2><Link to="/">TP-Express</Link></h2>
     <nav>
-        <li><a href="">Home</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">SignUp/Login</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/About">About</Link></li>
+        <li><Link to="/Login">SignUp/Login</Link></li>
     </nav>
-</header>
+    </header>
   );
 }
 export default Nav;

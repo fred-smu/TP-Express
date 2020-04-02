@@ -8,7 +8,7 @@ function Product() {
     <ul className="brand-content">
     <li className="brand-left">
         <div className="card" style={{width: "20rem", height: "20rem"}}>
-            <img className="card-img-top" src="API Image" alt="Card image cap" aria-placeholder="Brand image here"/> 
+            <img className="card-img-top" src="API Image" alt="Card logo cap"/> 
         </div>
     </li>
     <li className="brand-right">

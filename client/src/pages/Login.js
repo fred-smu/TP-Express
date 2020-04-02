@@ -14,9 +14,7 @@ function Login() {
         <div className="col-lg-6 col-md-6 form-container">
             <div className="col-md-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
                 <div className="logo text-center mt-5">
-                    <a>
-                    <img src={Logo} style={{height: "90px", width: "130px"}}/>
-                    </a>
+                    <img src={Logo} style={{height: "90px", width: "130px"}} alt = "logo"/>
                 </div>
                 <div className="heading mb-3">
                     <h4>Login into your account</h4>
@@ -24,22 +22,16 @@ function Login() {
             <form>
                 <div className="form-input">
                     <span><i className="fa fa-envelope"></i></span>
-                    <a>
                     <input type="email" placeholder="Email Address" required/>
-                    </a>
                 </div>
                 <div className="form-input">
                     <span><i className="fa fa-lock"></i></span>
-                    <a>
                     <input type="password" placeholder="Password" required/>
-                    </a>
                 </div>
                 <div className="row mb-3">
                     <div className="col-6 d-flex">
                         <div className="custom-control custom-checkbox">
-                            <a>
                             <input type="checkbox" className="custom-control-input" id="controlOne"/>
-                            </a>
                             <label className="custom-control-label text-white" for="controlOne">
                                 Remember Me
                             </label> 

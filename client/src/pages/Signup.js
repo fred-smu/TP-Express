@@ -13,9 +13,7 @@ function Signup() {
             <div class="col-lg-6 col-md-6 form-container">
                 <div class="col-md-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
                     <div class="logo text-center mt-5">
-                        <a>
-                        <img src={Logo} style={{height: "90px", width: "130px"}}/>
-                        </a>
+                        <img src={Logo} style={{height: "90px", width: "130px"}} alt = "logo"/>
                     </div>
                     <div class="heading mb-3">
                         <h4>Create an account</h4>
@@ -23,28 +21,20 @@ function Signup() {
                 <form>
                     <div class="form-input">
                         <span><i class="fa fa-user"></i></span>
-                        <a>
                         <input type="email" placeholder="Full Name" required/>
-                        </a>
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-envelope"></i></span>
-                        <a>
                         <input type="email" placeholder="Email Address" required/>
-                        </a>
                     </div>
                     <div class="form-input">
                         <span><i class="fa fa-lock"></i></span>
-                        <a>
                         <input type="password" placeholder="Password" required/>
-                        </a>
                     </div>
                     <div class="row mb-3">
                         <div class="col-12 d-flex">
                             <div class="custom-control custom-checkbox">
-                                <a>
                                 <input type="checkbox" class="custom-control-input" id="controlOne"/>
-                                </a>
                                 <label class="custom-control-label text-white" for="controlOne">
                                     I agree all terms & conditions
                                 </label> 

@@ -9,7 +9,7 @@ function Account() {
     <ul className="account-content">
         <li className="account-left">
             <div className="card" style={{width: "20rem", height: "20rem"}}>
-                <img className="card-img-top" src="ImageUpload" alt="Profile pic" aria-placeholder="Brand image here"/> 
+                <img className="card-img-top" src="ImageUpload" alt="Profile pic"/> 
             </div>
         </li>
         <li className="account-right">

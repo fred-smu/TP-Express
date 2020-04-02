@@ -1,0 +1,152 @@
+/* Bases for the html */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header navbar */
+ul, nav {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* Positioning and setting flex on header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 35px 100px 0;
+}
+
+header h2 {
+    text-transform: uppercase;
+}
+
+/* Setting flex for navigavtion */
+header nav {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+header nav li:first-child{
+    margin-left: 0;
+}
+
+header nav li:last-child{
+    margin-right: 0;
+}
+
+/* When screen size changes for header */
+@media(max-width:1000px){
+    header{
+        padding: 20px 50px;
+    }
+}
+
+@media(max-width:700px){
+    header{
+        flex-direction: column;
+    }
+    header h2{
+        margin-bottom: 15px;
+    }
+    header nav li{
+        margin: 0 7px;
+    }
+}
+
+/* TP-Express banner */
+section {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 100px;
+}
+
+/* When screen size changes for banner */
+@media(max-width:1000px){
+    section{
+        padding: 100px 50px;
+    }
+}
+
+@media(max-width:600px){
+    section{
+        padding: 110px 30px;
+    }
+}
+
+section h2 {
+    margin-left: 0;
+}
+
+.tp-banner {
+    background-color: lightgray;
+}
+
+.brand-slogan {
+    font-family:'Cabin', sans-serif;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.brand-cards {
+    display: inline-flex;
+    padding-right: 10px;
+    margin-bottom: 1;
+}
+
+/* Brand cards */
+span {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 90px 100px;
+}
+
+
+/* When screen size changes for cards */
+@media(max-width:1000px){
+    span{
+        padding: 35px 50px;
+    }
+}
+
+@media(max-width:600px){
+    span{
+        padding: 35px 84px;
+    }
+}
+

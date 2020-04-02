@@ -13,7 +13,7 @@ function PWReset() {
         <div class="col-lg-6 col-md-6 form-container">
             <div class="col-md-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
                 <div class="logo text-center mt-5">
-                    <img src={Logo} style={{height: "90px", width: "130px"}}/>
+                    <img src={Logo} style={{height: "90px", width: "130px"}} alt = "logo"/>
                 </div>
                 <div class="reset-form d-block">
                     <form class="reset-password-form">

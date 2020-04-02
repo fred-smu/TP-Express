@@ -1,6 +1,7 @@
 import React from "react";
 import "../Style/account.css"
-import Logo from "../Style/tp-icon.png"
+import Logo from "../Style/tp-icon.png";
+import Product from "../pages/Product";
 
 function Account() {
    return (    
@@ -53,7 +54,7 @@ function Account() {
     <h2 className="favorite-title text-lightgray">Favorites List</h2>
     <span className="brand-cards">
         <div className="card" style={{width: "18rem"}}>
-            <img className="card-img-top" src={Logo} alt="Card image cap" aria-placeholder="Brand image here"/>
+            <img className="card-img-top" src={Logo} alt="Card logo cap"/>
             <div className="card-body">
                 <h5 className="card-title">Toilet Paper product title</h5>
                 <p className="card-text">Company Title of toilet paper brand</p>
@@ -64,8 +65,8 @@ function Account() {
                 <li className="list-group-item">Price From Amazon</li>
             </ul>
             <div className="card-body">
-                <a href="#" className="card-link">View item</a>
-                <a href="#" className="card-link">Remove item</a>
+                <a href={{Product}} className="card-link">View item</a>
+                <a href={{Account}} className="card-link">Remove item</a>
             </div>
             </div>
     </span>

@@ -1,11 +1,54 @@
-import React from "react";
+import React, { Component } from "react";
 import "../Style/login.css"
 import Logo from "../Style/tp-icon.png"
+import axios from "axios";
 
 
+class Login extends Component {
+    // Setting the component's initial state
+    state = {
+      email: "",
+      password: ""
+    };
+    
+    
 
-function Login() {
-  
+    handleFormSubmit = (event, email, password) => {
+        console.log(email, password);
+        event.preventDefault();
+        this.loginUser(email, password);        
+    }
+    
+    handleInputChange = event => {
+      // Getting the value and name of the input which triggered the change
+      let value = event.target.value;
+      console.log(event.target.value);
+      const name = event.target.name;
+      // Updating the input's state
+      this.setState({
+        [name]: value
+      });
+      console.log(this.state);
+    };
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    loginUser = (email, password) => {
+        axios.post("/api/login", {
+            login: email,
+            password: password
+           
+        })
+          .then(function(data) {
+              console.log(data);
+            window.location.replace("/");
+
+            // If there's an error, log the error
+          })
+          .catch(function(err) {
+            console.log(err);
+          });
+      }    
+
+ render() {
   return (
 
     <div className="conainer-fuild">
@@ -22,17 +65,25 @@ function Login() {
             <form>
                 <div className="form-input">
                     <span><i className="fa fa-envelope"></i></span>
-                    <input type="email" placeholder="Email Address" required/>
+                    <input type="email" 
+                    placeholder="Email Address" required
+                    value={this.state.email}
+                    name="email"
+                    onChange={this.handleInputChange}/>
                 </div>
                 <div className="form-input">
                     <span><i className="fa fa-lock"></i></span>
-                    <input type="password" placeholder="Password" required/>
+                    <input type="password" 
+                    placeholder="Password" required
+                    value={this.state.password}
+                    name="password"
+                    onChange={this.handleInputChange}/>
                 </div>
                 <div className="row mb-3">
                     <div className="col-6 d-flex">
                         <div className="custom-control custom-checkbox">
                             <input type="checkbox" className="custom-control-input" id="controlOne"/>
-                            <label className="custom-control-label text-white" for="controlOne">
+                            <label className="custom-control-label text-white" htmlFor="controlOne">
                                 Remember Me
                             </label> 
                         </div>
@@ -42,7 +93,7 @@ function Login() {
                     </div>
                 </div>
                 <div className="text-center">
-                    <button type="submit" className="btn btn">Login</button>
+                    <button type="submit" className="btn btn"  onClick={(event) => this.handleFormSubmit(event, this.state.email, this.state.password)}>Login</button>
                 </div>
                 <div className="mt-3 text-white">Don't have an account?
                     <a href="signup.html" className="signup-link">Sign Up</a>
@@ -54,6 +105,7 @@ function Login() {
     </div>
 </div>
   );
+}
 }
 export default Login;
 

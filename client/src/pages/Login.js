@@ -45,7 +45,7 @@ function Login() {
                     <button type="submit" className="btn btn">Login</button>
                 </div>
                 <div className="mt-3 text-white">Don't have an account?
-                    <a href="signup.html" className="signup-link">Sign Up</a>
+                    <a href="signup" className="signup-link">Sign Up</a>
                 </div>
             </form>
             </div>

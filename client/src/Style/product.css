@@ -101,11 +101,10 @@ ul.brand-content {
 
 .brand-left {
     flex-basis: 20%;
-    margin-left: 25px;
 }
 
 .brand-right {
-    flex-basis: 70%;
+    flex-basis: 63%;
 }
 
 .product-title {
@@ -113,7 +112,6 @@ ul.brand-content {
 }
 
 ul.store-content {
-    width: 70%;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;

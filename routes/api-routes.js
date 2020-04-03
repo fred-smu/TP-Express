@@ -150,7 +150,7 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
-  app.post("/api/login", passport.authenticate("local"), function(req, res) {
+  app.post("/api/login", passport.authenticate("local"), function(req, res) {    
     res.json(req.user);
   });
 
@@ -158,8 +158,10 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
+    console.log(req.body);
     db.User.create({
-      email: req.body.email,
+      login: req.body.login,
+      // email: req.body.email,
       password: req.body.password
     })
       .then(function() {

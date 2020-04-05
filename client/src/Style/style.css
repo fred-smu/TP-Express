@@ -60,6 +60,11 @@ header nav li:last-child{
     margin-right: 0;
 }
 
+.store {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* When screen size changes for header */
 @media(max-width:1000px){
     header{
@@ -89,6 +94,12 @@ section {
     flex-direction: column;
     align-items: center;
     padding: 90px 100px;
+}
+
+/* Remove webkit appearance none so select arrow displays */
+
+#select-box {
+    -webkit-appearance: button;
 }
 
 /* When screen size changes for banner */

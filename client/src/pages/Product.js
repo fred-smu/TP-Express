@@ -39,38 +39,42 @@ class TPComponent extends Component {
      * 
      */
 
-// 1st walmart api call is giving a 403 forbidden error
+// The below api is working, you have to pass the url of one product.  If there are multiple products on the page it will not work
 
-// axios({
-//   "method":"GET",
-//   "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
-//   "headers":{
-//   "content-type":"application/octet-stream",
-//   "x-rapidapi-host":"axesso-walmart-data-service.p.rapidapi.com",
-//   "x-rapidapi-key":"9429490917msh70be5ef070eec0ep1fec84jsnafca7d833618"
-//   },"params":{
-//   "url":"toilet paper"
-//   }
-//   })
-//   .then((response)=>{
-//     console.log(response)
-//   })
-//   .catch((error)=>{
-//     console.log(error)
-//   })
+axios({
+  "method":"GET",
+  "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
+  "headers":{
+  "content-type":"application/octet-stream",
+  "x-rapidapi-host":"axesso-walmart-data-service.p.rapidapi.com",
+  "x-rapidapi-key":"3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
+  },"params":{
+  "url":"https://www.walmart.com/ip/Cottonelle-Ultra-ComfortCare-Mega-Toilet-Paper-Roll-6-Count/269583391"
+  }
+  })
+  .then((response)=>{
+    console.log('response', response)
+  })
+  .catch((error)=>{
+    console.log('error', error)
+  })
+
+// fred's api: 9429490917msh70be5ef070eec0ep1fec84jsnafca7d833618
 
 // 1st walmart api call above
 /************************************************************************************************** */
 
+
 //2nd walmart api call is giving a 522 error.. 522 is a timming out error.
+// I could not get this one to work, either.  Got a 522
 
     // axios({
     //   "method": "GET",
-    //   "url": "https://feeditem-walmart.p.rapidapi.com/itemID/toilet%2520paper",
+    //   "url": "https://feeditem-walmart.p.rapidapi.com/itemID/567942983",
     //   "headers": {
     //     "content-type": "application/octet-stream",
     //     "x-rapidapi-host": "feeditem-walmart.p.rapidapi.com",
-    //     "x-rapidapi-key": "9429490917msh70be5ef070eec0ep1fec84jsnafca7d833618"
+    //     "x-rapidapi-key": "3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
     //   }
     // })
     //   .then(res => res.json())
@@ -83,6 +87,8 @@ class TPComponent extends Component {
     //     console.log(error);
     //   })
 
+
+    
 //2nd walmart api call above
 /************************************************************************************************** */
 
@@ -104,6 +110,11 @@ class TPComponent extends Component {
     //     console.log("target --" + TARdata);
     //   })
 
+
+
+
+
+
 // Target api call above
 /************************************************************************************************** */
 
@@ -118,18 +129,24 @@ class TPComponent extends Component {
     //   "headers": {
     //     "content-type": "application/octet-stream",
     //     "x-rapidapi-host": "amazon-price.p.rapidapi.com",
-    //     "x-rapidapi-key": "9429490917msh70be5ef070eec0ep1fec84jsnafca7d833618"
+    //     "x-rapidapi-key": "3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
     //   }, "params": {
     //     "prime": "false",
     //     "query": "toilet paper",
     //     "page": "1"
     //   }
-    // })
-    //     .then(res => res.json())
-    //     .then((AMZdata) => {
-    //       this.setState({ Amzitems: AMZdata })
-    //       console.log("Amizon --" + AMZdata);
-    //     })
+    //   .then(res => res.json())
+    //   .then((response) => {
+    //     console.log(response);
+    //   }).catch(res => res.json())
+    //   .then((error) => {
+    //     console.log('error', error)
+    //   })
+        // .then(res => res.json())
+        // .then((AMZdata) => {
+        //   this.setState({ Amzitems: AMZdata })
+        //   console.log("Amizon --" + AMZdata);
+        // })
 
   
 // Amazon api call above

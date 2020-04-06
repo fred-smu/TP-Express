@@ -1,21 +1,64 @@
-import React from "react";
+import React, {Component} from 'react';
 import "../Style/account.css"
-import Logo from "../Style/tp-icon.png";
-import Product from "../pages/Product";
-import Nav from "../components/Nav";
+import Nav2 from "../components/Nav2";
+import {storage} from '../firebase';
 
-function Account() {
+class Account extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        image: null,
+        url: '',
+      }
+      this.handleChange = this
+        .handleChange
+        .bind(this);
+        this.handleUpload = this.handleUpload.bind(this);
+    }
+    handleChange = e => {
+      if (e.target.files[0]) {
+        const image = e.target.files[0];
+        this.setState(() => ({image}));
+      }
+    }
+    handleUpload = () => {
+        const {image} = this.state;
+        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+        uploadTask.on('state_changed', 
+        () => {
+        }, 
+        (error) => {
+             // error function ....
+          console.log(error);
+        }, 
+      () => {
+          // complete function ....
+          storage.ref('images').child(image.name).getDownloadURL().then(url => {
+              console.log(url);
+              this.setState({url});
+          })
+      });
+    }
+    render() {
+      const style = {
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center'
+    };
     return (
         <div>
-            <Nav />
+            <Nav2/>
             <hr /><hr />
+            <div style={style}>
+                <input type="file" onChange={this.handleChange}/>
+                <button onClick={this.handleUpload}>Upload</button>
+                <br/>
+                <img src={this.state.url || 'https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png'} alt="Uploaded images" height="200" width="200"/>
+            </div>
             <section className="account-area">
                 <ul className="account-content">
-                    <li className="account-left">
-                        <div className="card" style={{ width: "18rem", height: "18rem" }}>
-                            <img className="card-img-top" src="ImageUpload" alt="Profile pic" />
-                        </div>
-                    </li>
                     <li className="account-right">
                         <h2 className="name-title text-darkgray">Account page</h2>
                         <hr /><hr />
@@ -50,10 +93,10 @@ function Account() {
                     </li>
                 </ul>
             </section>
+            {/* <br /><br />
             <br /><br />
-            <br /><br />
-            <hr /><hr />
-            <section className="favorite-area">
+            <hr /><hr /> */}
+            {/* <section className="favorite-area">
                 <h2 className="favorite-title text-lightgray">Favorites List</h2>
                 <span className="brand-cards">
                     <div className="card" style={{ width: "18rem" }}>
@@ -73,8 +116,9 @@ function Account() {
                         </div>
                     </div>
                 </span>
-            </section>
+            </section> */}
         </div>
     );
+    }
 }
 export default Account;

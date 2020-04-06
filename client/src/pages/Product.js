@@ -3,9 +3,9 @@ import "../Style/product.css";
 import Nav from "../components/Nav";
 import axios from "axios";
 // var Item = [];
-var WalProd  = " ";
-var WalPrice = " ";
-var WalAval  = " ";
+// var WalProd  = " ";
+// var WalPrice = " ";
+// var WalAval  = " ";
 
 
 // function Product() {
@@ -21,8 +21,8 @@ class TPComponent extends Component {
       WalProd: [],
       WalPrice: [],
       WalAval: []
+    }
   }
-}
   componentDidMount() {
     // Item[0]="https://www.walmart.com/ip/Cottonelle-FreshCare-Flushable-Wipes-resealable-pack-168-wipes-total/38192980"
     // Item[1]="https://www.walmart.com/ip/Angel-Soft-Toilet-Paper-12-Jumbo-Rolls/713550748"
@@ -77,9 +77,9 @@ axios({
     // WalProd  = response.data.productTitle;
     // WalPrice = response.data.price;
     // WalAval  = response.data.available;
-    console.log('response', WalProd)
-    console.log('response', WalPrice)
-    console.log('response', WalAval)
+    // console.log('response', WalProd)
+    // console.log('response', WalPrice)
+    // console.log('response', WalAval)
   })
   .catch((error)=>{
     console.log('error', error)
@@ -106,14 +106,14 @@ axios({
 //   })
 
 
-// Kmart api call above
-/************************************************************************************************** */
+    // Kmart api call above
+    /************************************************************************************************** */
 
-// Amazon api 
-// call is coming back with a 
-// Product.js:105 Uncaught (in promise) TypeError: res.json is not a function
-// this is a formating error i dont have somthing defined correctly"
-  
+    // Amazon api 
+    // call is coming back with a 
+    // Product.js:105 Uncaught (in promise) TypeError: res.json is not a function
+    // this is a formating error i dont have somthing defined correctly"
+
 
 
     // axios({
@@ -134,8 +134,8 @@ axios({
     //   .catch((error)=>{
     //     console.log(error)
     //   })
-  
-// Amazon api call above
+
+    // Amazon api call above
 
   }
 

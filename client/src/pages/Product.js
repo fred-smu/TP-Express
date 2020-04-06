@@ -24,9 +24,9 @@ class TPComponent extends Component {
   }
 }
   componentDidMount() {
-    Item[0]="https://www.walmart.com/ip/Cottonelle-FreshCare-Flushable-Wipes-resealable-pack-168-wipes-total/38192980"
-    Item[1]="https://www.walmart.com/ip/Angel-Soft-Toilet-Paper-12-Jumbo-Rolls/713550748"
-    Item[2]="https://www.walmart.com/ip/Charmin-Ultra-Strong-Toilet-Paper-9-Mega-Roll-286-Sheets-Per-Roll/450185839"
+    // Item[0]="https://www.walmart.com/ip/Cottonelle-FreshCare-Flushable-Wipes-resealable-pack-168-wipes-total/38192980"
+    // Item[1]="https://www.walmart.com/ip/Angel-Soft-Toilet-Paper-12-Jumbo-Rolls/713550748"
+    // Item[2]="https://www.walmart.com/ip/Charmin-Ultra-Strong-Toilet-Paper-9-Mega-Roll-286-Sheets-Per-Roll/450185839"
     
     axios({
       "method":"GET",
@@ -49,9 +49,9 @@ class TPComponent extends Component {
         // Item[2]="https://www.walmart.com"+response.data.foundProducts[2];
 
         
-        console.log('response=',  WalItems[0])
-        console.log('response=',  WalItems[1])
-        console.log('response=',  WalItems[2])
+        // console.log('response=',  WalItems[0])
+        // console.log('response=',  WalItems[1])
+        // console.log('response=',  WalItems[2])
        
       })
       .catch((error)=>{

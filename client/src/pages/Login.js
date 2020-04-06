@@ -39,7 +39,7 @@ class Login extends Component {
         })
           .then(function(data) {
               console.log(data);
-            window.location.replace("/");
+            window.location.replace("/Home");
 
             // If there's an error, log the error
           })

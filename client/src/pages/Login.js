@@ -88,9 +88,6 @@ class Login extends Component {
                             </label> 
                         </div>
                     </div>
-                    <div className="col-6 text-right">
-                        <a href="forgotten.html" className="forgot-link">Forgot Password</a>
-                    </div>
                 </div>
                 <div className="text-center">
                     <button type="submit" className="btn btn"  onClick={(event) => this.handleFormSubmit(event, this.state.email, this.state.password)}>Login</button>

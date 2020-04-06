@@ -56,6 +56,11 @@ module.exports = function(app) {
           res.json(dbPost);
         });
     });
+
+    //update customer info
+    app.patch("/api/custinfo/image/:imageurl", function (req, res) {
+      db.CustInfo.update()
+    })
     // update a record
     app.put("/api/custinfo/:userId", function(req, res) {
       db.custInfo.update(req.user,
@@ -83,17 +88,17 @@ module.exports = function(app) {
 
 /************Iteminfo */
      // find one record by userId
-    app.get("/api/iteminfo/:userId", function(req, res) {
-      db.ItemInfo.findOne({
-        where: {
-          userId: req.user.userId
-        }
-      })
-      .then(function(dbPost) {
-        console.log(dbPost);
-        res.json(dbPost);
-      });
-    });
+    // app.get("/api/iteminfo/:userId", function(req, res) {
+    //   db.ItemInfo.findOne({
+    //     where: {
+    //       userId: req.user.userId
+    //     }
+    //   })
+    //   .then(function(dbPost) {
+    //     console.log(dbPost);
+    //     res.json(dbPost);
+    //   });
+    // });
       // find one record by id
     app.get("/api/iteminfo/:userId", function(req, res) {
       db.ItemInfo.findOne({

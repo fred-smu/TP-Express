@@ -1,15 +1,14 @@
 import React from "react";
 import "../Style/style.css";
 import Logo from "../Style/tp-icon.png";
-import Product from "../pages/Product";
 import Account from "../pages/Account";
-import Nav from "../components/Nav";
+import Nav2 from "../components/Nav2";
 
 function Home() {
 
     return (
         <div>
-            <Nav />
+            <Nav2 />
             <section className="tp-banner">
                 <h2><img src={Logo} style={{ height: "110px", width: "150px" }} alt="logo" />TP-Express</h2>
                 <h6 className="brand-slogan">We can find you your TP!</h6>
@@ -31,7 +30,7 @@ function Home() {
                         <li className="list-group-item">Price From Amazon</li>
                     </ul>
                     <div className="card-body">
-                        <a href={{ Product }} className="card-link">View Item</a>
+                        {/* <a href={{ Product }} className="card-link">View Item</a> */}
                         <a href={{ Account }} className="card-link">Add to wishlist</a>
                     </div>
                 </div>
@@ -49,7 +48,7 @@ function Home() {
                         <li className="list-group-item">Price From Amazon</li>
                     </ul>
                     <div className="card-body">
-                        <a href={{ Product }} className="card-link">View Item</a>
+                        {/* <a href={{ Product }} className="card-link">View Item</a> */}
                         <a href={{ Account }} className="card-link">Add to wishlist</a>
                     </div>
                 </div>
@@ -67,7 +66,7 @@ function Home() {
                         <li className="list-group-item">Price From Amazon</li>
                     </ul>
                     <div className="card-body">
-                        <a href={{ Product }} className="card-link">View Item</a>
+                        {/* <a href={{ Product }} className="card-link">View Item</a> */}
                         <a href={{ Account }} className="card-link">Add to wishlist</a>
                     </div>
                 </div>

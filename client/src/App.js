@@ -16,8 +16,8 @@ function App() {
     <Router>
       <Wrapper>
         <Switch>
-          <Route exact path="/" component= {Home} />
-          <Route exact path="/Login" component={Login} />
+          <Route exact path="/Home" component= {Home} />
+          <Route exact path="/" component={Login} />
           <Route exact path="/Signup" component={Signup} />
           <Route exact path="/Account" component={Account} />
           <Route exact path="/Product" component={Product} />

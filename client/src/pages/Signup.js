@@ -40,7 +40,7 @@ class Signup extends Component {
         })
           .then(function(data) {
               console.log(data);
-            window.location.replace("/");
+            window.location.replace("/Home");
             // If there's an error, handle it by throwing up a bootstrap alert
           })
         //   .catch(handleLoginErr);
@@ -100,7 +100,7 @@ class Signup extends Component {
                         <button onClick = {(event) => this.signUpUser(event, this.state.fullName, this.state.email, this.state.password)} type="text" className="btn btn">Sign Up</button>
                     </div>
                     <div className="mt-3 text-white">Already have an account?
-                        <a href="login.html" className="login-link">Login</a>
+                        <a href="/" className="login-link">Login</a>
                     </div>
                 </form>
                 </div>

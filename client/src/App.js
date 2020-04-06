@@ -3,7 +3,6 @@ import Wrapper       from "./components/Wrapper";
 import Home      from "./pages/Home";
 import Login   from "./pages/Login";
 import Signup from "./pages/Signup";
-import PWReset from "./pages/PWReset";
 import Account from "./pages/Account";
 import Product from "./pages/Product";
 import About from "./pages/About";
@@ -20,7 +19,6 @@ function App() {
           <Route exact path="/" component= {Home} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Signup" component={Signup} />
-          <Route exact path="/PWReset" component={PWReset} />
           <Route exact path="/Account" component={Account} />
           <Route exact path="/Product" component={Product} />
           <Route exact path="/About" component={About} />

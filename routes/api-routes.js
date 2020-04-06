@@ -121,6 +121,20 @@ module.exports = function(app) {
             res.json(dbPost);
           });
       });
+
+      //update profile image//
+      app.patch("/api/iteminfo/image/:imageurl", function (req, res) {
+        db.ItemInfo.update(
+          {
+            where:{
+              customer_pic: req.user.customer_pic
+            }
+          }
+        )
+        .then(function(dbPatch) {
+          res.json(dbPatch)
+        });
+      });
       // update a record
       app.put("/api/password/:userId", function(req, res) {
         db.Password.update(req.user,

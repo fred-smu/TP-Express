@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "../Style/product.css";
 import Nav from "../components/Nav";
 import axios from "axios";
-var Item = [];
+// var Item = [];
 var WalProd  = " ";
 var WalPrice = " ";
 var WalAval  = " ";
@@ -17,69 +17,74 @@ class TPComponent extends Component {
       isLoaded: false,
       Walitems: [],
       Taritems: [],
-      Amzitems: []
-    };
+      Amzitems: [],
+      WalProd: [],
+      WalPrice: [],
+      WalAval: []
   }
+}
   componentDidMount() {
     Item[0]="https://www.walmart.com/ip/Cottonelle-FreshCare-Flushable-Wipes-resealable-pack-168-wipes-total/38192980"
     Item[1]="https://www.walmart.com/ip/Angel-Soft-Toilet-Paper-12-Jumbo-Rolls/713550748"
     Item[2]="https://www.walmart.com/ip/Charmin-Ultra-Strong-Toilet-Paper-9-Mega-Roll-286-Sheets-Per-Roll/450185839"
     
-    // axios({
-    //   "method":"GET",
-    //   "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-search-by-keyword",
-    //   "headers":{
-    //   "content-type":"application/octet-stream",
-    //   "x-rapidapi-host":"axesso-walmart-data-service.p.rapidapi.com",
-    //   "x-rapidapi-key":"3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
-    //   },"params":{
-    //     "sortBy": "best_match",
-    //     "page": 1,
-    //     "keyword": "toilet paper",
-    //     "type": "text",
-    //   }
-    //   })
-    //   .then((response)=>{
-    //     Item[0]="https://www.walmart.com"+response.data.foundProducts[0];
-    //     Item[1]="https://www.walmart.com"+response.data.foundProducts[1];
-    //     Item[2]="https://www.walmart.com"+response.data.foundProducts[2];
-    //     // TPComponent.state.Walitems[0]=response.data.foundProducts[0];
-    //     // TPComponent.state.Walitems[1]=response.data.foundProducts[1];
-    //     // TPComponent.state.Walitems[2]=response.data.foundProducts[2];
-    //     console.log('response=',  Item[0])
-    //     console.log('response=',  Item[1])
-    //     console.log('response=',  Item[2])
+    axios({
+      "method":"GET",
+      "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-search-by-keyword",
+      "headers":{
+      "content-type":"application/octet-stream",
+      "x-rapidapi-host":"axesso-walmart-data-service.p.rapidapi.com",
+      "x-rapidapi-key":"3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
+      },"params":{
+        "sortBy": "best_match",
+        "page": 1,
+        "keyword": "toilet paper",
+        "type": "text",
+      }
+      })
+      .then((response)=>{
+        this.setState({WalItems:"https://www.walmart.com"+response.data.foundProducts.slice(0,3)});
+        // Item[0]="https://www.walmart.com"+response.data.foundProducts[0];
+        // Item[1]="https://www.walmart.com"+response.data.foundProducts[1];
+        // Item[2]="https://www.walmart.com"+response.data.foundProducts[2];
+
+        
+        console.log('response=',  WalItems[0])
+        console.log('response=',  WalItems[1])
+        console.log('response=',  WalItems[2])
        
-    //   })
-    //   .catch((error)=>{
-    //     console.log('error', error)
-    //   })
-
-    
-// axios({
-//   "method":"GET",
-//   "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
-//   "headers":{
-//   "content-type":"application/octet-stream",
-//   "x-rapidapi-host":"axesso-walmart-data-service.p.rapidapi.com",
-//   "x-rapidapi-key":"3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
-//   },"params":{
-//   "url":Item[0]
-//   }
-//   })
-//   .then((response)=>{
-//     WalProd  = response.data.productTitle;
-//     WalPrice = response.data.price;
-//     WalAval  = response.data.available;
-//     console.log('response', WalProd)
-//     console.log('response', WalPrice)
-//     console.log('response', WalAval)
-//   })
-//   .catch((error)=>{
-//     console.log('error', error)
-//   })
-
-
+      })
+      .catch((error)=>{
+        console.log('error', error)
+      })
+// 
+ this.state.WalItems.forEach(item =>
+axios({
+  "method":"GET",
+  "url":"https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
+  "headers":{
+  "content-type":"application/octet-stream",
+  "x-rapidapi-host":"axesso-walmart-data-service.p.rapidapi.com",
+  "x-rapidapi-key":"3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
+  },"params":{
+  "url":item
+  }
+  })
+  .then((response)=>{
+    this.setState({ WalProd: [...this.state.WalProd, response.data.productTitle]});
+    this.setState({ WalPrice: [...this.state.WalPrice, response.data.price]});
+    this.setState({ WalAval: [...this.state.WalAval, response.data.available]});
+    // WalProd  = response.data.productTitle;
+    // WalPrice = response.data.price;
+    // WalAval  = response.data.available;
+    console.log('response', WalProd)
+    console.log('response', WalPrice)
+    console.log('response', WalAval)
+  })
+  .catch((error)=>{
+    console.log('error', error)
+  })
+)
 /************************************************************************************************** */
 /***************************************************Kmart */
 // axios({
@@ -148,14 +153,14 @@ class TPComponent extends Component {
               </div>
             </li>
             <li className="brand-right">
-              <h2 className="product-title text-darkgray">{WalProd}</h2>
+              <h2 className="product-title text-darkgray">{this.state.WalProd[0]}</h2>
               <hr /><hr />
               <ul className="store-content">
                 <li><br />
                   <h4>Walmart Price</h4>
                   <br />
-                  <p>Price: {WalPrice}</p>
-                  <p>Avaliability: {WalAval}</p>
+                  <p>Price: {this.state.WalPrice[0]}</p>
+                  <p>Avaliability: {this.state.WalAval[0]}</p>
                   <br />
                   <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Add to favorites</button>
                   <br /><br />

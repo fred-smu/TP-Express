@@ -78,6 +78,22 @@ class Signup extends Component {
                         onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-input">
+                        <span><i class="fa fa-home"></i></span>
+                        <input type="homeAddress" 
+                        placeholder="Home Address" 
+                        value={this.state.homeAddress}
+                        name="homeAddress"
+                        onChange={this.handleInputChange}/>
+                    </div>
+                    <div className="form-input">
+                        <span><i class="fa fa-phone"></i></span>
+                        <input type="phoneNumber" 
+                        placeholder="Phone Number" 
+                        value={this.state.phoneNumber}
+                        name="phoneNumber"
+                        onChange={this.handleInputChange}/>
+                    </div>
+                    <div className="form-input">
                         <span><i className="fa fa-lock"></i></span>
                         <input  type="password"
                         placeholder="Password" required                        

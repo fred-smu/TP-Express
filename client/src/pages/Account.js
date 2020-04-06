@@ -1,9 +1,5 @@
 import React, {Component} from 'react';
 import "../Style/account.css"
-<<<<<<< HEAD
-// import Logo from "../Style/tp-icon.png";
-=======
->>>>>>> 5dc8d8366291c2da9989f505d03e86ae85b4e9c6
 import Nav2 from "../components/Nav2";
 import {storage} from '../firebase';
 
@@ -50,11 +46,7 @@ class Account extends Component {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center'
-<<<<<<< HEAD
-      };
-=======
     };
->>>>>>> 5dc8d8366291c2da9989f505d03e86ae85b4e9c6
     return (
         <div>
             <Nav2/>
@@ -63,11 +55,7 @@ class Account extends Component {
                 <input type="file" onChange={this.handleChange}/>
                 <button onClick={this.handleUpload}>Upload</button>
                 <br/>
-<<<<<<< HEAD
-                <img src={this.state.url || 'https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png'} alt="Uploaded images" height="300" width="300"/>
-=======
                 <img src={this.state.url || 'https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png'} alt="Uploaded images" height="200" width="200"/>
->>>>>>> 5dc8d8366291c2da9989f505d03e86ae85b4e9c6
             </div>
             <section className="account-area">
                 <ul className="account-content">
@@ -107,12 +95,7 @@ class Account extends Component {
             </section>
             {/* <br /><br />
             <br /><br />
-<<<<<<< HEAD
-            <br /><br />
-            <hr /><hr />
-=======
             <hr /><hr /> */}
->>>>>>> 5dc8d8366291c2da9989f505d03e86ae85b4e9c6
             {/* <section className="favorite-area">
                 <h2 className="favorite-title text-lightgray">Favorites List</h2>
                 <span className="brand-cards">
@@ -137,6 +120,5 @@ class Account extends Component {
         </div>
     );
     }
-}
 }
 export default Account;

@@ -56,13 +56,6 @@ module.exports = function(app) {
           res.json(dbPost);
         });
     });
-<<<<<<< HEAD
-
-    //update customer info
-    app.patch("/api/custinfo/image/:imageurl", function (req, res) {
-      db.CustInfo.update()
-    })
-=======
     //update profile image
     app.patch("/api/custinfo/image/:imageUrl", function(req, res) {
       db.custInfo.update(
@@ -75,7 +68,6 @@ module.exports = function(app) {
         res.json(dbPatch);
       });
     });
->>>>>>> 5dc8d8366291c2da9989f505d03e86ae85b4e9c6
     // update a record
     app.put("/api/custinfo/:userId", function(req, res) {
       db.custInfo.update(req.user,

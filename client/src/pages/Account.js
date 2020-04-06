@@ -67,26 +67,26 @@ class Account extends Component {
                                 <br />
                                 <h4>Full Name:</h4>
                                 <br />
-                                <p>Name here</p>
+                                <input>Name here</input>
                                 <br />
                                 <br />
                                 <h4>Email address:</h4>
                                 <br />
-                                <p>Address here</p>
+                                <input>Address here</input>
                                 <br />
                             </li>
                             <li>
                                 <br />
                                 <h4>Home Address:</h4>
                                 <br />
-                                <p>Home address here</p>
+                                <input>Home address here</input>
                                 <br />
                             </li>
                             <li>
                                 <br />
                                 <h4>Phone number:</h4>
                                 <br />
-                                <p>Phone number here</p>
+                                <input>Phone number here</input>
                                 <br />
                             </li>
                         </ul>

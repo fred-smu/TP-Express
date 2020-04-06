@@ -24,85 +24,6 @@ class TPComponent extends Component {
     }
   }
   componentDidMount() {
-<<<<<<< HEAD
-
-    // axios({
-    //   "method": "GET",
-    //   "url": "https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-search-by-keyword",
-    //   "headers": {
-    //     "content-type": "application/octet-stream",
-    //     "x-rapidapi-host": "axesso-walmart-data-service.p.rapidapi.com",
-    //     "x-rapidapi-key": "3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
-    //   }, "params": {
-    //     "sortBy": "best_match",
-    //     "page": 1,
-    //     "keyword": "toilet paper",
-    //     "type": "text",
-    //   }
-    // })
-    //   .then((response) => {
-    //     this.setState({ WalItems: "https://www.walmart.com" + response.data.foundProducts.slice(0, 3) });
-    //     // Item[0]="https://www.walmart.com"+response.data.foundProducts[0];
-    //     // Item[1]="https://www.walmart.com"+response.data.foundProducts[1];
-    //     // Item[2]="https://www.walmart.com"+response.data.foundProducts[2];
-
-
-    //     // console.log('response=',  WalItems[0])
-    //     // console.log('response=',  WalItems[1])
-    //     // console.log('response=',  WalItems[2])
-
-    //   })
-    //   .catch((error) => {
-    //     console.log('error', error)
-    //   })
-    // // 
-    // this.state.WalItems.forEach(item =>
-    //   axios({
-    //     "method": "GET",
-    //     "url": "https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
-    //     "headers": {
-    //       "content-type": "application/octet-stream",
-    //       "x-rapidapi-host": "axesso-walmart-data-service.p.rapidapi.com",
-    //       "x-rapidapi-key": "3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
-    //     }, "params": {
-    //       "url": item
-    //     }
-    //   })
-    //     .then((response) => {
-    //       this.setState({ WalProd: [...this.state.WalProd, response.data.productTitle] });
-    //       this.setState({ WalPrice: [...this.state.WalPrice, response.data.price] });
-    //       this.setState({ WalAval: [...this.state.WalAval, response.data.available] });
-    //       // WalProd  = response.data.productTitle;
-    //       // WalPrice = response.data.price;
-    //       // WalAval  = response.data.available;
-    //       // console.log('response', WalProd)
-    //       // console.log('response', WalPrice)
-    //       // console.log('response', WalAval)
-    //     })
-    //     .catch((error) => {
-    //       console.log('error', error)
-    //     })
-    // )
-    /************************************************************************************************** */
-    /***************************************************Kmart */
-    // axios({
-    //   "method":"POST",
-    //   "url":"https://feeditem-kmart.p.rapidapi.com/keyword",
-    //   "headers":{
-    //   "content-type":"application/x-www-form-urlencoded",
-    //   "x-rapidapi-host":"feeditem-kmart.p.rapidapi.com",
-    //   "x-rapidapi-key":"9429490917msh70be5ef070eec0ep1fec84jsnafca7d833618"
-    //   },"data":{
-    //     "keyword": "toilet paper",
-    //   }
-    //   })
-    //   .then((response)=>{
-    //     console.log(response)
-    //   })
-    //   .catch((error)=>{
-    //     console.log(error)
-    //   })
-=======
     // Item[0]="https://www.walmart.com/ip/Cottonelle-FreshCare-Flushable-Wipes-resealable-pack-168-wipes-total/38192980"
     // Item[1]="https://www.walmart.com/ip/Angel-Soft-Toilet-Paper-12-Jumbo-Rolls/713550748"
     // Item[2]="https://www.walmart.com/ip/Charmin-Ultra-Strong-Toilet-Paper-9-Mega-Roll-286-Sheets-Per-Roll/450185839"
@@ -156,9 +77,9 @@ axios({
     // WalProd  = response.data.productTitle;
     // WalPrice = response.data.price;
     // WalAval  = response.data.available;
-    console.log('response', WalProd)
-    console.log('response', WalPrice)
-    console.log('response', WalAval)
+    // console.log('response', WalProd)
+    // console.log('response', WalPrice)
+    // console.log('response', WalAval)
   })
   .catch((error)=>{
     console.log('error', error)
@@ -183,7 +104,6 @@ axios({
 //   .catch((error)=>{
 //     console.log(error)
 //   })
->>>>>>> 5dc8d8366291c2da9989f505d03e86ae85b4e9c6
 
 
     // Kmart api call above

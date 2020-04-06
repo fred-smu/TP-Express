@@ -40,7 +40,7 @@ class Signup extends Component {
         })
           .then(function(data) {
               console.log(data);
-            window.location.replace("/");
+            window.location.replace("/Home");
             // If there's an error, handle it by throwing up a bootstrap alert
           })
         //   .catch(handleLoginErr);

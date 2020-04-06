@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import axios from "axios";
 import "../Style/style.css";
 import Logo from "../Style/tp-icon.png";
-import Product from "../pages/Product";
-import Account from "../pages/Account";
-import Nav from "../components/Nav";
+import Nav2 from "../components/Nav2";
 
 // function Product() {
 class TPComponent extends Component {
@@ -46,30 +44,32 @@ class TPComponent extends Component {
                 console.log('error', error)
             })
         const WalCall=()=> {
-            this.state.WalItems.forEach(item =>
-                axios({
-                    "method": "GET",
-                    "url": "https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
-                    "headers": {
-                        "content-type": "application/octet-stream",
-                        "x-rapidapi-host": "axesso-walmart-data-service.p.rapidapi.com",
-                        "x-rapidapi-key": "3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
-                    }, "params": {
-                        "url": item
-                    }
-                })
-                    .then((response) => {
-                        this.setState({ WalProd: [...this.state.WalProd, response.data.productTitle] });
-                        this.setState({ WalPrice: [...this.state.WalPrice, response.data.price] });
-                        this.setState({ WalAval: [...this.state.WalAval, response.data.available] });
-                        console.log('WalProd:' + this.state.WalProd[0]);
-                        console.log('WalPrice' + this.state.WalPrice[0]);
-                        console.log('WalAval' + this.state.WalAval[0]);
-                    })
-                    .catch((error) => {
-                        console.log('error', error)
-                    })
-            )
+            console.log(this.state.WalItems);
+            
+            // this.state.WalItems.forEach(item =>
+            //     axios({
+            //         "method": "GET",
+            //         "url": "https://axesso-walmart-data-service.p.rapidapi.com/wlm/walmart-lookup-product",
+            //         "headers": {
+            //             "content-type": "application/octet-stream",
+            //             "x-rapidapi-host": "axesso-walmart-data-service.p.rapidapi.com",
+            //             "x-rapidapi-key": "3b8ee98b70mshf74d3fe848bde7dp1f7b3ajsn392bc6e2ea65"
+            //         }, "params": {
+            //             "url": item
+            //         }
+            //     })
+            //         .then((response) => {
+            //             this.setState({ WalProd: [...this.state.WalProd, response.data.productTitle] });
+            //             this.setState({ WalPrice: [...this.state.WalPrice, response.data.price] });
+            //             this.setState({ WalAval: [...this.state.WalAval, response.data.available] });
+            //             console.log('WalProd:' + this.state.WalProd[0]);
+            //             console.log('WalPrice' + this.state.WalPrice[0]);
+            //             console.log('WalAval' + this.state.WalAval[0]);
+            //         })
+            //         .catch((error) => {
+            //             console.log('error', error)
+            //         })
+            // )
         };
         /************************************************************************************************** */
         /***************************************************Kmart */
@@ -229,5 +229,6 @@ class TPComponent extends Component {
             </div>
         );
     };
+    
 }
 export default TPComponent;

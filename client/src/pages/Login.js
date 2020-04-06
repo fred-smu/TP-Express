@@ -39,7 +39,7 @@ class Login extends Component {
         })
           .then(function(data) {
               console.log(data);
-            window.location.replace("/");
+            window.location.replace("/Home");
 
             // If there's an error, log the error
           })
@@ -87,9 +87,6 @@ class Login extends Component {
                                 Remember Me
                             </label> 
                         </div>
-                    </div>
-                    <div className="col-6 text-right">
-                        <a href="forgotten.html" className="forgot-link">Forgot Password</a>
                     </div>
                 </div>
                 <div className="text-center">

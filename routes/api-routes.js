@@ -56,6 +56,18 @@ module.exports = function(app) {
           res.json(dbPost);
         });
     });
+    //update profile image
+    app.patch("/api/custinfo/image/:imageUrl", function(req, res) {
+      db.custInfo.update(
+        {
+        where: {
+          customer_pic: req.user.customer_pic
+        }
+      })
+      .then(function(dbPatch) {
+        res.json(dbPatch);
+      });
+    });
     // update a record
     app.put("/api/custinfo/:userId", function(req, res) {
       db.custInfo.update(req.user,
@@ -120,6 +132,19 @@ module.exports = function(app) {
           .then(function(dbPost) {
             res.json(dbPost);
           });
+      });
+
+      //update profile image//
+      app.patch("/api/iteminfo/image/:imageurl", function (req, res) {
+        db.ItemInfo.update(
+          {
+            where:{
+              customer_pic: req.user.customer_pic
+            }
+          })
+        .then(function(dbPatch) {
+          res.json(dbPatch)
+        });
       });
       // update a record
       app.put("/api/password/:userId", function(req, res) {

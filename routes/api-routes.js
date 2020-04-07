@@ -71,6 +71,21 @@ module.exports = function(app) {
           res.json(dbPost);
         });
     });
+
+    //get image//
+    app.get("/api/image", function(req, res) {
+      console.log("image body", req.body)
+      db.User.findOne(
+        {
+        where: {
+          id: req.user.id
+        }
+      })
+      .then(function(dbGet) {
+        res.json(dbGet);
+      });
+    });
+
     //update profile image
     app.post("/api/image", function(req, res) {
       console.log("image body", req.body)

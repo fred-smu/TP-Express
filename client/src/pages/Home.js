@@ -18,7 +18,7 @@ class TPComponent extends Component {
             WalAval: [],
             AmzProd: [],
             AmzPrice: [],
-            AmzTital: []
+            AmzTitle: []
         }
     }
     componentDidMount() {

@@ -165,7 +165,7 @@ class TPComponent extends Component {
                         <img className="card-img-top" src={Logo} alt="Card logo cap" />
                         <div className="card-body">
                            <h5 className="card-title">{this.state.AmzProd.length?this.state.AmzProd[0].title:null}</h5>
-                            <p className="card-text">Amizon</p>
+                            <p className="card-text">Amazon</p>
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">Price: {this.state.AmzProd.length?this.state.AmzProd[0].price:null}</li>
@@ -183,7 +183,7 @@ class TPComponent extends Component {
                         <img className="card-img-top" src={Logo} alt="Card logo cap" />
                         <div className="card-body">
                            <h5 className="card-title">{this.state.AmzProd.length?this.state.AmzProd[1].title:null}</h5>
-                            <p className="card-text">Amizon</p>
+                            <p className="card-text">Amazon</p>
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">Price: {this.state.AmzProd.length?this.state.AmzProd[1].price:null}</li>
@@ -201,7 +201,7 @@ class TPComponent extends Component {
                         <img className="card-img-top" src={Logo} alt="Card logo cap" />
                         <div className="card-body">
                         <h5 className="card-title">{this.state.AmzProd.length?this.state.AmzProd[2].title:null}</h5>
-                            <p className="card-text">Amizon</p>
+                            <p className="card-text">Amazon</p>
                         </div>
                         <ul className="list-group list-group-flush">
                             <li className="list-group-item">Price: {this.state.AmzProd.length?this.state.AmzProd[2].price:null}</li>

@@ -1,13 +1,13 @@
 import React from "react";
 import "../Style/style.css";
 import Logo from "../Style/tp-icon.png";
-import Nav from "../components/Nav";
+import Nav2 from "../components/Nav2";
 
 function About() {
 
   return (
     <div>
-      <Nav />
+      <Nav2 />
       <section className="tp-banner">
         <h1 className="mt-5">About Us</h1>
         <h2><img src={Logo} style={{ height: "110px", width: "150px" }} alt="logo" />TP-Express</h2>

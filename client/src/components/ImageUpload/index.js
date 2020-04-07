@@ -65,7 +65,7 @@ class ImageUpload extends Component {
         <input type="file" onChange={this.handleChange}/>
         <button onClick={this.handleUpload}>Upload</button>
         <br/>
-        <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="profile pic" height="300" width="400"/>
+        <img src={this.state.url || 'https://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png'} alt="profile pic" height="300" width="400"/>
       </div>
     )
   }

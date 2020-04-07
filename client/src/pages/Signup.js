@@ -7,13 +7,15 @@ class Signup extends Component {
     state = {
         fullName: "",
         email: "",
-        password: ""
+        password: "",
+        address: "",
+        phone:"",
       };
 
-      handleFormSubmit = (event, fullName, email, password) => {
+      handleFormSubmit = (event, fullName, email, password, address,phone) => {
         event.preventDefault();
-        console.log(fullName, email, password)
-        this.signUpUser(fullName, email, password);
+        console.log(fullName, email, password, address,phone)
+        this.signUpUser(fullName, email, password, address,phone);
       }
 
       handleInputChange = event => {
@@ -30,13 +32,15 @@ class Signup extends Component {
         axios.get("/api/test")
           .then(function(data){console.log(data);})
       }
-      signUpUser = (event, fullName,email, password) => {
+      signUpUser = (event, fullName,email, password, address, phone) => {
         event.preventDefault();
-        console.log(fullName, email, password);
+        console.log(fullName, email, password,address, phone);
         axios.post("/api/signup", {
-            name: fullName,
+            fullName: fullName,
             login: email,
-          password: password
+          password: password,
+          address: address,
+          phone: phone
         })
           .then(function(data) {
               console.log(data);
@@ -78,19 +82,19 @@ class Signup extends Component {
                         onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-input">
-                        <span><i class="fa fa-home"></i></span>
-                        <input type="homeAddress" 
+                        <span><i className="fa fa-home"></i></span>
+                        <input type="address" 
                         placeholder="Home Address" 
-                        value={this.state.homeAddress}
-                        name="homeAddress"
+                        value={this.state.address}
+                        name="address"
                         onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-input">
-                        <span><i class="fa fa-phone"></i></span>
-                        <input type="phoneNumber" 
+                        <span><i className="fa fa-phone"></i></span>
+                        <input type="phone" 
                         placeholder="Phone Number" 
-                        value={this.state.phoneNumber}
-                        name="phoneNumber"
+                        value={this.state.phone}
+                        name="phone"
                         onChange={this.handleInputChange}/>
                     </div>
                     <div className="form-input">
@@ -113,7 +117,7 @@ class Signup extends Component {
                         </div>
                     </div>
                     <div className="text-center">
-                        <button onClick = {(event) => this.signUpUser(event, this.state.fullName, this.state.email, this.state.password)} type="text" className="btn btn">Sign Up</button>
+                        <button onClick = {(event) => this.signUpUser(event, this.state.fullName, this.state.email, this.state.password, this.state.address, this.state.phone)} type="text" className="btn btn">Sign Up</button>
                     </div>
                     <div className="mt-3 text-white">Already have an account?
                         <a href="/" className="login-link">Login</a>

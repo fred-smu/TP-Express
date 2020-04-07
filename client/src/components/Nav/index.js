@@ -7,9 +7,9 @@ function Nav() {
     <header>
     <h2><Link to="/">TP-Express</Link></h2>
     <nav>
-        <li><Link to="/">Home</Link></li>
+        <li><Link to="/Home">Home</Link></li>
         <li><Link to="/About">About</Link></li>
-        <li><Link to="/Login">SignUp/Login</Link></li>
+        <li><Link to="/">SignUp/Login</Link></li>
     </nav>
     </header>
   );

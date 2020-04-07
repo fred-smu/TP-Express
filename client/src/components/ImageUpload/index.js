@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {storage} from '../firebase';
+import {storage} from '../../firebase';
+import axios from "axios"
 
 class ImageUpload extends Component {
   constructor(props) {
@@ -33,12 +34,26 @@ class ImageUpload extends Component {
         // complete function ....
         storage.ref('images').child(image.name).getDownloadURL().then(url => {
             console.log(url);
-            this.setState({url});
+            axios.post("/api/image", {url: url})
+            .then((data) => {
+              console.log("PATCH", data)
+            })
+            // this.setState({url});
         })
     });
   }
+  componentDidMount(){
+    axios.get("/api/image")
+    .then(
+        (data)=> {
+            console.log("RESPONSE DATA", data)
+            this.setState({ url: data.data.customer_pic})
+        }
+    )
+}
+
   render() {
-    const style = {
+    const style = { 
       height: '100vh',
       display: 'flex',
       flexDirection: 'column',
@@ -50,7 +65,7 @@ class ImageUpload extends Component {
         <input type="file" onChange={this.handleChange}/>
         <button onClick={this.handleUpload}>Upload</button>
         <br/>
-        <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="Uploaded images" height="300" width="400"/>
+        <img src={this.state.url || 'http://via.placeholder.com/400x300'} alt="profile pic" height="300" width="400"/>
       </div>
     )
   }

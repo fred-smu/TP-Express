@@ -29,6 +29,21 @@ module.exports = function(app) {
       res.json(dbPost);
     });
   });
+
+  ///
+  app.get("/bananas", function(req, res) {
+    console.log("get body", req.body)
+    db.User.findOne({
+      where: {
+        id: req.user.id
+      }
+    })
+    .then(function(userData) {
+      console.log("user Data",userData);
+      res.json(userData);
+    });
+  });
+
     // find one record by id
   app.get("/api/custinfo/:userId", function(req, res) {
     db.custInfo.findOne({
@@ -56,16 +71,33 @@ module.exports = function(app) {
           res.json(dbPost);
         });
     });
-    //update profile image
-    app.patch("/api/custinfo/image/:imageUrl", function(req, res) {
-      db.custInfo.update(
+
+    //get image//
+    app.get("/api/image", function(req, res) {
+      console.log("image body", req.body)
+      db.User.findOne(
         {
         where: {
-          customer_pic: req.user.customer_pic
+          id: req.user.id
         }
       })
-      .then(function(dbPatch) {
-        res.json(dbPatch);
+      .then(function(dbGet) {
+        res.json(dbGet);
+      });
+    });
+
+    //update profile image
+    app.post("/api/image", function(req, res) {
+      console.log("image body", req.body)
+      db.User.update(
+        {customer_pic: req.body.url},
+        {
+        where: {
+          id: req.user.id
+        }
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
       });
     });
     // update a record
@@ -95,17 +127,17 @@ module.exports = function(app) {
 
 /************Iteminfo */
      // find one record by userId
-    app.get("/api/iteminfo/:userId", function(req, res) {
-      db.ItemInfo.findOne({
-        where: {
-          userId: req.user.userId
-        }
-      })
-      .then(function(dbPost) {
-        console.log(dbPost);
-        res.json(dbPost);
-      });
-    });
+    // app.get("/api/iteminfo/:userId", function(req, res) {
+    //   db.ItemInfo.findOne({
+    //     where: {
+    //       userId: req.user.userId
+    //     }
+    //   })
+    //   .then(function(dbPost) {
+    //     console.log(dbPost);
+    //     res.json(dbPost);
+    //   });
+    // });
       // find one record by id
     app.get("/api/iteminfo/:userId", function(req, res) {
       db.ItemInfo.findOne({
@@ -118,34 +150,21 @@ module.exports = function(app) {
         res.json(dbPost);
       });
     });
-      // create custinfo record
-      app.post("/api/iteminfo", function(req, res) {
-        console.log(req.body);
-        db.ItemInfo.create({
-          userId: req.body.userId,
-          storeName: req.body.storeName,
-          itemLable: req.body.itemLable,
-          itemLableTwo: req.body.itemLableTwo,
-          price: req.body.price,
-          item_pic: req.body.item_pic
-        })
-          .then(function(dbPost) {
-            res.json(dbPost);
-          });
-      });
-
-      //update profile image//
-      app.patch("/api/iteminfo/image/:imageurl", function (req, res) {
-        db.ItemInfo.update(
-          {
-            where:{
-              customer_pic: req.user.customer_pic
-            }
-          })
-        .then(function(dbPatch) {
-          res.json(dbPatch)
-        });
-      });
+      // // create custinfo record
+      // app.post("/api/iteminfo", function(req, res) {
+      //   console.log(req.body);
+      //   db.ItemInfo.create({
+      //     userId: req.body.userId,
+      //     storeName: req.body.storeName,
+      //     itemLable: req.body.itemLable,
+      //     itemLableTwo: req.body.itemLableTwo,
+      //     price: req.body.price,
+      //     item_pic: req.body.item_pic
+      //   })
+      //     .then(function(dbPost) {
+      //       res.json(dbPost);
+      //     });
+      // });
       // update a record
       app.put("/api/password/:userId", function(req, res) {
         db.Password.update(req.user,
@@ -186,8 +205,10 @@ module.exports = function(app) {
     console.log(req.body);
     db.User.create({
       login: req.body.login,
-      // email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      fullName: req.body.fullName,
+      address: req.body.address,
+      phone: req.body.phone      
     })
       .then(function() {
         res.redirect(307, "/api/login");

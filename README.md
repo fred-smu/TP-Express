@@ -14,7 +14,7 @@ Once you set up a login and password, you will be alowed to login and then see t
 
 ## Click [here](https://arcane-chamber-47434.herokuapp.com/) for the live app.
 
-This is the Lohin page:
+This is the Login page:
 
 ![Home Screenshot](./photo/login.png)
 

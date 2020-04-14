@@ -14,9 +14,27 @@ Once you set up a login and password, you will be alowed to login and then see t
 
 ## Click [here](https://arcane-chamber-47434.herokuapp.com/) for the live app.
 
-This is the home page:
+This is the Lohin page:
 
-![Home Screenshot](./photo/project1.1.png)
+![Home Screenshot](./photo/login.png)
+
+This is the User Signup page:
+
+![Home Screenshot](./photo/signup.png)
+
+This is the Account page were a user can upload a picture of themselfs:
+
+![Home Screenshot](./photo/account.png)
+
+This is the About page:
+
+![Home Screenshot](./photo/about.png)
+
+This is the TP pricing page:
+
+![Home Screenshot](./photo/home.png)
+
+
 
 This app was designed using the following technologies:
 
